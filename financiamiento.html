@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Automotora CYC: compra y venta de autos usados y nuevos con garantía, asesoría y los mejores precios del mercado." />
+  <title>Financiamiento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+      --color-black: #000000;
+      --color-white: #FFFFFF;
+      --color-red: #B22222;
+      /* rojo oscuro firebrick */
+      --color-gray-light: #CCCCCC;
+      --font-main: 'Barlow', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--color-white);
+      color: var(--color-white);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    header {
+      background-color: #111;
+      color: #fff;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      border-bottom: 1px solid #333;
+      z-index: 1000;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .logo-text .sub {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #333;
+    }
+
+
+/* HAMBURGER MENU */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background-color: red;
+      /* menú hamburguesa rojo */
+      border: none;
+      padding: 0.5rem;
+      border-radius: 6px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+  .financiamiento {
+  padding: 40px 20px;
+  background-color: #1b1b1b;
+  color: #f1f1f1;
+  font-family: 'Barlow', sans-serif;
+}
+
+.financiamiento-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.financiamiento h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.financiamiento p {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #cccccc;
+}
+
+.faq-style-financiamiento details {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s;
+}
+
+.faq-style-financiamiento details:hover {
+  background-color: #333333;
+}
+
+.faq-style-financiamiento summary {
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.faq-style-financiamiento ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.faq-style-financiamiento li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: #dddddd;
+}
+
+  .footer {
+  font-family: 'Barlow', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 40px 20px 20px;
+}
+
+.footer-top {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.linea-superior,
+.linea-inferior {
+  border: none;
+  border-top: 1px solid #dcdcdc;
+  margin: 20px 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-titulo {
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.footer-redes .redes-iconos {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-redes img {
+  width: 28px;
+  transition: transform 0.3s ease;
+}
+
+.footer-redes img:hover {
+  transform: scale(1.2);
+}
+
+.footer-mapa iframe {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.footer-botones .botones {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-mapa,
+.btn-waze {
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.btn-mapa {
+  background: #e8e8e8;
+  color: #2c3e50;
+}
+
+.btn-waze {
+  background: #d0e8ff;
+  color: #034a8f;
+}
+
+.btn-mapa:hover {
+  background: #ff4c4c;
+  color: #fff;
+  border-color: #ff4c4c;
+}
+
+.btn-waze:hover {
+  background: #0277bd;
+  color: #fff;
+  border-color: #0277bd;
+}
+
+.footer-creditos {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 20px;
+}
+.footer-creditos a {
+  color: #e74c3c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-creditos a:hover {
+  text-decoration: underline;
+  color: #ff6b6b;
+}
+
+/* Efecto mágico en enlaces del nav */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #B22222; /* rojo firebrick */
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #ff6b6b;
+  animation: navGlow 1s infinite alternate;
+}
+
+nav a:hover::before,
+nav a:focus::before {
+  width: 100%;
+}
+
+
+/* Animaciones */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cinta-pagos {
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  padding: 10px 0;
+  margin-top: 40px;
+}
+
+.cinta-track {
+  display: flex;
+  width: max-content;
+  animation: deslizar 8s linear infinite; /* antes: 10s */
+  gap: 40px;
+  align-items: center;
+}
+
+
+.cinta-track img {
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.cinta-track img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes deslizar {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+#form-financiamiento-container {
+  max-width: 560px;  /* Más ancho */
+  margin: 40px auto;
+  padding: 30px 40px; /* Menos padding vertical, más compacto */
+  background: linear-gradient(135deg, #ffffff, #fbe7e9);
+  border-radius: 18px;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    0 0 35px rgba(220, 20, 60, 0.15);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #3a3a3a;
+}
+
+/* Título */
+#form-financiamiento-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 1.1px;
+  color: #b33a3a;
+  text-shadow: 0 1px 3px rgba(179, 58, 58, 0.3);
+}
+
+/* Subtítulo */
+#form-financiamiento-container p {
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-bottom: 28px;
+  color: #555;
+  letter-spacing: 0.02em;
+}
+
+/* Formulario */
+#form-financiamiento {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Inputs y select */
+#form-financiamiento input[type="text"],
+#form-financiamiento input[type="email"],
+#form-financiamiento select {
+  padding: 14px 20px; /* Menos alto */
+  font-size: 1.05rem;
+  border-radius: 14px;
+  border: 1.6px solid #ddd;
+  background-color: #fff;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.04);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  color: #444;
+  font-weight: 500;
+}
+
+/* Placeholder */
+#form-financiamiento input::placeholder,
+#form-financiamiento select option:first-child {
+  color: #b88;
+  font-style: italic;
+}
+
+/* Focus */
+#form-financiamiento input[type="text"]:focus,
+#form-financiamiento input[type="email"]:focus,
+#form-financiamiento select:focus {
+  outline: none;
+  border-color: #b33a3a;
+  box-shadow: 0 0 10px rgba(179, 58, 58, 0.4);
+  transform: scale(1.02);
+}
+
+/* Botón */
+#form-financiamiento button {
+  padding: 16px 0; /* Más compacto verticalmente */
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(45deg, #b33a3a, #7d1e1e);
+  box-shadow: 0 10px 25px rgba(179, 58, 58, 0.6);
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.2s ease;
+  user-select: none;
+}
+
+#form-financiamiento button:hover {
+  background: linear-gradient(45deg, #7d1e1e, #b33a3a);
+  box-shadow: 0 14px 35px rgba(125, 30, 30, 0.8);
+  transform: scale(1.05);
+}
+
+/* Mensaje respuesta */
+#mensaje-respuesta {
+  margin-top: 26px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #b33a3a;
+  min-height: 26px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(179, 58, 58, 0.25);
+}
+
+@media (max-width: 768px) {
+
+  /* Box-sizing para todo */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+
+  nav {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    flex-direction: column;
+    padding-top: 80px;
+    color: #fff;
+    z-index: 1000;
+    border-radius: 0 0 0 20px;
+  }
+
+  nav.open {
+    transform: translateX(0);
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+  }
+
+  nav li {
+    border-bottom: 1px solid #444;
+  }
+
+  nav li:last-child {
+    border-bottom: none;
+  }
+
+  nav a {
+    color: #fff;
+    display: block;
+    padding: 1.2rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    user-select: none;
+  }
+
+  nav a:hover,
+  nav a:focus {
+    background-color: rgba(255, 0, 0, 0.3);
+    outline: none;
+  }
+
+  .hamburger {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+     background-color: black;
+    padding: 0.6rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--color-red);
+    z-index: 1100;
+  }
+
+    .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-redes .redes-iconos {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .footer-botones .botones {
+    justify-content: center;
+  }
+
+  .footer-mapa iframe {
+    height: 200px;
+  }
+
+  .footer-titulo {
+    margin-top: 20px;
+  }
+  .financiamiento {
+    padding: 30px 15px;
+  }
+  .financiamiento-container {
+    max-width: 95%;
+    padding: 0 10px;
+  }
+  .financiamiento h2 {
+    font-size: 1.6rem;
+  }
+  .financiamiento p {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+  .faq-style-financiamiento details {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+
+   #form-financiamiento-container {
+    max-width: 90%;
+    padding: 25px 20px;
+  }
+  #form-financiamiento-container h2 {
+    font-size: 1.6rem;
+  }
+  #form-financiamiento-container p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  #form-financiamiento input[type="text"],
+  #form-financiamiento input[type="email"],
+  #form-financiamiento select {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+  #form-financiamiento button {
+    font-size: 1.1rem;
+    padding: 14px 0;
+  }
+
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HTML: Menú de navegación y botón hamburguesa -->
+ <header>
+  <div class="container">
+    <div class="logo-text" style="display: flex; align-items: center; gap: 10px;">
+      <img src="images/Autos/Logo.png" alt="Logo CC Autos" style="height: 70px;" />
+     
+    </div>
+
+    <!-- Menú de navegación -->
+    <nav id="nav" role="navigation" aria-label="Menú principal">
+      <ul id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem" tabindex="0">Inicio</a></li>
+        <li role="none"><a href="stock.html" role="menuitem" tabindex="0">Stock</a></li>
+        <li role="none"><a href="vender.html" role="menuitem" tabindex="0">Vende tu vehiculo</a></li>
+        <li role="none"><a href="financiamiento.html" role="menuitem" tabindex="0">Financiamiento</a></li>
+      </ul>
+    </nav>
+
+    
+
+    <!-- Botón hamburguesa -->
+    <button id="hamburger" class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+<div id="overlay"></div>
+<main>
+
+  <!-- SECCIÓN FINANCIAMIENTO -->
+
+<section class="financiamiento" id="financiamiento">
+  <div class="financiamiento-container">
+    <h2>Financiamiento</h2>
+    <p>Trabajamos con distintas entidades financieras para ofrecerte las mejores opciones según tu perfil.</p>
+
+    <div class="faq-style-financiamiento">
+      <details>
+        <summary>¿Cómo funciona?</summary>
+        <ul>
+          <li>📋 Completa el formulario con tus datos.</li>
+          <li>📞 Un asesor te contactará directamente.</li>
+          <li>🏦 Evaluamos con varias financieras.</li>
+          <li>💬 Te presentamos la mejor propuesta.</li>
+          <li>🚗 ¡Compra tu auto sin complicaciones!</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Requisitos comunes</summary>
+        <ul>
+          <li>✅ Cédula de identidad vigente.</li>
+          <li>✅ Contrato o boletas de ingreso.</li>
+          <li>✅ Antigüedad laboral mínima (3-6 meses).</li>
+          <li>✅ Comportamiento financiero responsable.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div id="form-financiamiento-container">
+  <h2>Simula tu Financiamiento</h2>
+  <p>Completa los datos y evalúa tu crédito de forma rápida y sin compromiso</p>
+
+  <form id="form-financiamiento">
+    <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required />
+
+    <input type="text" id="rut" name="rut" placeholder="RUT" required />
+
+    <input type="email" id="email" name="email" placeholder="Correo electrónico" list="sugerencias-email" required />
+    <datalist id="sugerencias-email">
+      <option value="gmail.com">
+      <option value="outlook.com">
+      <option value="icloud.com">
+      <option value="hotmail.com">
+    </datalist>
+
+    <input type="text" id="ingreso" name="ingreso" placeholder="$1.000.000" required />
+    <input type="text" id="monto" name="monto" placeholder="$10.000.000" required />
+    <input type="text" id="pie" name="pie" placeholder="$1.500.000" required />
+
+    <select name="cuotas" required>
+      <option value="">Seleccione cuotas</option>
+      <option value="12">12 cuotas</option>
+      <option value="24">24 cuotas</option>
+      <option value="36">36 cuotas</option>
+    </select>
+
+    <input type="hidden" id="time" name="time" />
+
+    <button type="submit">Enviar solicitud</button>
+  </form>
+
+  <div id="mensaje-respuesta"></div>
+</div>
+
+
+      <!-- Cinta de logos de pago (fuera del footer) -->
+    <div class="cinta-pagos">
+      <div class="cinta-track">
+        <img src="images/carrusel/Logoredcompra.webp" alt="WebPay" />
+        <img src="images/carrusel/bci.jpg" alt="bci" />
+        <img src="images/carrusel/chile.png" alt="chile" />
+        <img src="images/carrusel/santander.png" alt="santander" />
+        <img src="images/carrusel/visa.png" alt="visa" />
+              <img src="images/carrusel/Logoredcompra.webp" alt="WebPay" />
+        <img src="images/carrusel/bci.jpg" alt="bci" />
+        <img src="images/carrusel/chile.png" alt="chile" />
+        <img src="images/carrusel/santander.png" alt="santander" />
+        <img src="images/carrusel/visa.png" alt="visa" />
+                <img src="images/carrusel/Logoredcompra.webp" alt="WebPay" />
+        <img src="images/carrusel/bci.jpg" alt="bci" />
+        <img src="images/carrusel/chile.png" alt="chile" />
+        <img src="images/carrusel/santander.png" alt="santander" />
+        <img src="images/carrusel/visa.png" alt="visa" />
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer-top">
+    <hr class="linea-superior" />
+    <div class="footer-content">
+      <!-- Redes sociales -->
+<div class="footer-redes">
+  <p class="footer-titulo">Síguenos</p>
+  <div class="redes-iconos">
+    <a href="https://www.instagram.com/ccautos.cl" target="_blank" aria-label="Instagram">
+      <img src="images/icons/instagram.svg" alt="Instagram" />
+    </a>
+    <a href="https://www.facebook.com/ccautos.cl" target="_blank" aria-label="Facebook">
+      <img src="images/icons/facebook.svg" alt="Facebook" />
+    </a>
+    <a href="https://wa.me/56988276054" target="_blank" aria-label="WhatsApp">
+      <img src="images/icons/whatsapp.svg" alt="WhatsApp" />
+    </a>
+  </div>
+</div>
+      <!-- Mapa -->
+      <div class="footer-mapa">
+        <p class="footer-titulo">¿Cómo llegar?</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2005.704283806157!2d-70.54977287795657!3d-33.4088170678863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662ce9569ad04e7%3A0xa64894df53a73b2f!2sAv.%20Apoquindo%207935%2C%207571514%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e1!3m2!1ses!2snl!4v1753989873260!5m2!1ses!2snl" 
+                width="100%" height="160" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <!-- Botones -->
+      <div class="footer-botones">
+        <p class="footer-titulo">Ubicación rápida</p>
+        <div class="botones">
+          <a class="btn-mapa" href="https://www.google.com/maps?q=Av.+Apoquindo+7935,+Las+Condes,+Chile" target="_blank">Google Maps</a>
+          <a class="btn-waze" href="https://waze.com/ul?ll=-33.4090082,-70.5496937&navigate=yes" target="_blank">Waze</a>
+        </div>
+      </div>
+    </div>
+    <hr class="linea-inferior" />
+  </div>
+
+<!-- Créditos -->
+<div class="footer-creditos">
+  <p>
+    &copy; 2025 <strong>CC Autos</strong>. Todos los derechos reservados. <br>
+    Diseñado y protegido por 
+    <a href="mailto:picininiluciano@gmail.com">Luciano</a>.
+  </p>
+</div>
+
+</footer>
+
+
+
+
+  <!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("g_3sUjPGhjaYGyqxG"); // Tu Public Key
+  })();
+</script>
+
+<script>
+  // 💲 Formatea ingresos y montos en CLP
+  function formatearPesos(input) {
+    let valor = input.value.replace(/\D/g, '');
+    if (valor === '') {
+      input.value = '';
+      return;
+    }
+    input.value = '$' + valor.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  }
+
+  ['ingreso', 'monto', 'pie'].forEach(id => {
+    const input = document.getElementById(id);
+    if (input) {
+      input.addEventListener('input', () => formatearPesos(input));
+    }
+  });
+
+  // 🆔 Formato RUT
+  const rutInput = document.getElementById('rut');
+  rutInput.addEventListener('input', () => {
+    let valor = rutInput.value.replace(/\D/g, '');
+    if (valor.length > 1) {
+      let cuerpo = valor.slice(0, -1);
+      let dv = valor.slice(-1);
+      cuerpo = cuerpo.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      rutInput.value = `${cuerpo}-${dv}`;
+    } else {
+      rutInput.value = valor;
+    }
+  });
+
+  // 📧 Email sin @ automático, con sugerencias
+  const emailInput = document.getElementById('email');
+  emailInput.addEventListener('blur', () => {
+    const valor = emailInput.value;
+    if (!valor.includes('@') && valor.length > 3) {
+      console.warn('Email sin dominio (opcional)');
+    }
+  });
+
+  // 📩 Envío del formulario
+  const form = document.getElementById('form-financiamiento');
+  const mensajeRespuesta = document.getElementById('mensaje-respuesta');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // ✅ Solo validar que RUT y PIE estén completos
+    const rut = document.getElementById('rut').value.trim();
+    const pie = document.getElementById('pie').value.trim();
+
+    if (!rut || !pie) {
+      mensajeRespuesta.style.color = 'red';
+      mensajeRespuesta.textContent = 'RUT y monto del pie son obligatorios.';
+      return;
+    }
+
+    // 📅 Agrega fecha y hora actual
+    document.getElementById('time').value = new Date().toLocaleString();
+
+    // 🔧 Limpia formato $ y . antes de enviar
+    ['ingreso', 'monto', 'pie'].forEach(id => {
+      const input = document.getElementById(id);
+      if (input) {
+        input.value = input.value.replace(/\./g, '').replace(/\$/g, '');
+      }
+    });
+
+    // 📤 Enviar con EmailJS
+    emailjs.sendForm('service_cs30t1l', 'template_xsnp61h', this)
+      .then(function (response) {
+        console.log('EmailJS OK:', response.status, response.text);
+        mensajeRespuesta.style.color = 'green';
+        mensajeRespuesta.textContent = '¡Formulario enviado con éxito!';
+        form.reset();
+      }, function (error) {
+        console.error('EmailJS Error:', error);
+        mensajeRespuesta.style.color = 'red';
+        mensajeRespuesta.textContent = 'Error al enviar el formulario.';
+      });
+  });
+</script>
+
+
+<script>
+  const animados = document.querySelectorAll('[data-animado]');
+  const mostrarAnimado = () => {
+    animados.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+        el.classList.add('activo');
+      }
+    });
+  };
+  window.addEventListener('scroll', mostrarAnimado);
+  window.addEventListener('load', mostrarAnimado);
+</script>
+
+<script>// ===== INYECTAR CSS PARA EFECTOS AVANZADOS =====
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    const overlay = document.getElementById('overlay');
+    const body = document.body;
+
+    // Función para abrir/cerrar menú
+    const toggleMenu = () => {
+      nav.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      overlay.classList.toggle('show');
+      body.classList.toggle('no-scroll');
+
+      const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!isExpanded));
+    };
+
+    // Click en el ícono hamburguesa
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Cierra el menú al hacer clic en cualquier enlace del menú
+    const navLinks = document.querySelectorAll('#nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        hamburger.classList.remove('active');
+        overlay.classList.remove('show');
+        body.classList.remove('no-scroll');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Cierra el menú si se hace clic en el fondo oscuro
+    overlay.addEventListener('click', () => {
+      nav.classList.remove('open');
+      hamburger.classList.remove('active');
+      overlay.classList.remove('show');
+      body.classList.remove('no-scroll');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>

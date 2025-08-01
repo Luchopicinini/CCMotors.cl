@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Automotora CYC: compra y venta de autos usados y nuevos con garantía, asesoría y los mejores precios del mercado." />
+  <title>Vende tu vehiculo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<!-- HTML: Menú de navegación y botón hamburguesa -->
+<header>
+  <div class="container">
+    <div class="logo-text" style="display: flex; align-items: center; gap: 10px;">
+      <img src="images/Autos/Logo.png" alt="Logo CC Autos" style="height: 70px;" />
+    </div>
+    <!-- Menú de navegación -->
+    <nav id="nav" role="navigation" aria-label="Menú principal">
+      <ul id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem" tabindex="0">Inicio</a></li>
+        <li role="none"><a href="stock.html" role="menuitem" tabindex="0">Stock</a></li>
+        <li role="none"><a href="vender.html" role="menuitem" tabindex="0">Vende tu vehículo</a></li>
+        <li role="none"><a href="financiamiento.html" role="menuitem" tabindex="0">Financiamiento</a></li>
+      </ul>
+    </nav>
+    <!-- Botón hamburguesa -->
+    <button id="hamburger" class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Overlay para menú móvil -->
+<div id="overlay"></div>
+
+
+
+<main class="container1">
+<section id="contacto" aria-label="Formulario para vender vehículo">
+  <h2>¿Quieres vender tu vehículo?</h2>
+  <p>Déjanos tus datos y te contactaremos.</p>
+
+  <form id="miFormulario" class="formulario" novalidate>
+    <!-- DATOS PERSONALES -->
+    <div class="form-group">
+      <label for="nombre">Nombre <span style="color: red;">*</span></label>
+      <input type="text" name="nombre" id="nombre" placeholder="Nombre" required />
+    </div>
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input type="text" name="apellido" id="apellido" placeholder="Apellido" />
+    </div>
+    <div class="form-group">
+      <label for="email">Correo electrónico <span style="color: red;">*</span></label>
+      <input type="email" name="email" id="email" placeholder="ejemplo@gmail.com" required />
+    </div>
+    <div class="form-group">
+      <label for="telefono">Teléfono <span style="color: red;">*</span></label>
+      <input type="tel" name="telefono" id="telefono" placeholder="+56 9 1234 6987" required />
+    </div>
+
+    <!-- DATOS DEL VEHÍCULO -->
+    <h3>Información del vehículo</h3>
+    <div class="form-group">
+      <label for="marca">Marca <span style="color: red;">*</span></label>
+      <input type="text" name="marca" id="marca" placeholder="Marca" required />
+    </div>
+    <div class="form-group">
+      <label for="modelo">Modelo</label>
+      <input type="text" name="modelo" id="modelo" placeholder="Modelo" />
+    </div>
+
+    <div class="form-group">
+      <label for="anio">Año del vehículo</label>
+      <select id="anio" name="anio"></select>
+    </div>
+
+    <div class="form-group">
+      <label for="combustible">Tipo de combustible <span style="color: red;">*</span></label>
+      <select id="combustible" name="combustible" required>
+        <option value="" disabled selected>Tipo de combustible</option>
+        <option value="Gasolina">Gasolina</option>
+        <option value="Diésel">Diésel</option>
+        <option value="Eléctrico">Eléctrico</option>
+        <option value="Híbrido">Híbrido</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="transmision">Tipo de transmisión <span style="color: red;">*</span></label>
+      <select id="transmision" name="transmision" required>
+        <option value="" disabled selected>Tipo de transmisión</option>
+        <option value="Manual">Manual</option>
+        <option value="Automática">Automática</option>
+        <option value="CVT">CVT</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="comentarios">Información adicional</label>
+      <textarea name="comentarios" id="comentarios" placeholder="Información adicional..." rows="4"></textarea>
+    </div>
+
+    <p>¿Prefieres atención directa? 
+      <a class="btn-wsp" href="https://wa.me/56912345678" target="_blank" rel="noopener" style="color:#ffffff;">Contáctanos por WhatsApp</a>
+    </p>
+
+    <div class="botones-formulario">
+      <button type="submit">Enviar</button>
+    </div>
+  </form>
+
+  <div id="mensaje-envio"></div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('miFormulario');
+  const mensaje = document.getElementById('mensaje-envio');
+
+  // Carga automática de años para el selector
+  const anioSelect = document.getElementById('anio');
+  const currentYear = new Date().getFullYear();
+  for (let y = currentYear; y >= 1980; y--) {
+    const option = document.createElement('option');
+    option.value = y;
+    option.textContent = y;
+    anioSelect.appendChild(option);
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // Campos obligatorios según JS
+    const camposObligatorios = [
+      'nombre',
+      'email',
+      'telefono',
+      'marca',
+      'combustible',
+      'transmision'
+    ];
+
+    for (const campo of camposObligatorios) {
+      const input = form.querySelector(`[name="${campo}"]`);
+      if (!input || !input.value.trim()) {
+        mensaje.textContent = `⚠️ El campo "${campo.charAt(0).toUpperCase() + campo.slice(1)}" es obligatorio.`;
+        mensaje.style.color = 'red';
+        input.focus();
+        return;
+      }
+    }
+
+    // Validar email
+    const email = form.querySelector('input[name="email"]').value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      mensaje.textContent = "⚠️ Ingresa un correo válido.";
+      mensaje.style.color = "red";
+      form.querySelector('input[name="email"]').focus();
+      return;
+    }
+
+    // Validar teléfono con formato +xx x xxxx xxxx (espacios opcionales)
+    const telefono = form.querySelector('input[name="telefono"]').value.trim();
+    const telefonoRegex = /^\+\d{2}\s?\d{1}\s?\d{4}\s?\d{4}$/;
+
+    if (!telefonoRegex.test(telefono)) {
+      mensaje.textContent = "⚠️ Ingresa un teléfono válido con formato +xx x xxxx xxxx";
+      mensaje.style.color = "red";
+      form.querySelector('input[name="telefono"]').focus();
+      return;
+    }
+
+    // Enviar formulario
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xeozeagg", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: data
+      });
+
+      if (response.ok) {
+        mensaje.textContent = "✅ ¡Formulario enviado correctamente!";
+        mensaje.style.color = "green";
+        form.reset();
+      } else {
+        mensaje.textContent = "⚠️ Error al enviar. Intenta más tarde.";
+        mensaje.style.color = "red";
+      }
+    } catch (error) {
+      mensaje.textContent = "❌ Error de red. Intenta nuevamente.";
+      mensaje.style.color = "red";
+    }
+  });
+});
+</script>
+
+
+
+
+<section id="faq" class="faq-section" aria-label="Preguntas frecuentes de venta">
+  <h2>Preguntas frecuentes</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">¿CC Autos compra mi auto directamente?</button>
+    <div class="faq-answer">
+      <p>No siempre. Evaluamos cada caso según el estado, marca y demanda del vehículo. En algunos casos podemos comprar directamente, y en otros, trabajamos bajo modalidad de consignación (física o virtual) para ayudarte a vender al mejor precio posible.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Qué es la venta en consignación?</button>
+    <div class="faq-answer">
+      <p>La consignación es una opción donde tu vehículo queda exhibido (en nuestra oficina o de forma virtual) para su venta. Una vez se concreta la venta, te transferimos el monto acordado. Esta modalidad te permite alcanzar un mejor precio de mercado.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Puedo elegir entre consignación física o virtual?</button>
+    <div class="faq-answer">
+      <p>Sí. Puedes traer el vehículo a nuestra oficina (consignación física) o enviarnos fotos y documentos para publicarlo en nuestras plataformas (consignación virtual). Tú eliges según tu comodidad.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Cómo se hace la transferencia del auto?</button>
+    <div class="faq-answer">
+      <p>Utilizamos la plataforma <strong>Autofact</strong> para realizar transferencias seguras y legales. Una vez concretada la venta y finalizado el proceso, realizamos el depósito del dinero en un plazo máximo de <strong>24 horas hábiles</strong>. Todo es transparente y respaldado legalmente.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Qué documentos necesito para vender?</button>
+    <div class="faq-answer">
+      <p>Solo necesitas:</p>
+      <ul>
+        <li>Padrón del vehículo</li>
+        <li>Permiso de circulación vigente</li>
+        <li>Revisión técnica al día</li>
+        <li>Tu cédula de identidad</li>
+      </ul>
+      <p>Nosotros nos encargamos del resto del proceso por ti.</p>
+    </div>
+  </div>
+</section>
+
+
+</main>
+<footer class="footer">
+  <div class="footer-top">
+    <hr class="linea-superior" />
+    <div class="footer-content">
+      <!-- Redes sociales -->
+<div class="footer-redes">
+  <p class="footer-titulo">Síguenos</p>
+  <div class="redes-iconos">
+    <a href="https://www.instagram.com/ccautos.cl" target="_blank" aria-label="Instagram">
+      <img src="images/icons/instagram.svg" alt="Instagram" />
+    </a>
+    <a href="https://www.facebook.com/ccautos.cl" target="_blank" aria-label="Facebook">
+      <img src="images/icons/facebook.svg" alt="Facebook" />
+    </a>
+    <a href="https://wa.me/56988276054" target="_blank" aria-label="WhatsApp">
+      <img src="images/icons/whatsapp.svg" alt="WhatsApp" />
+    </a>
+  </div>
+</div>
+      <!-- Mapa -->
+      <div class="footer-mapa">
+        <p class="footer-titulo">¿Cómo llegar?</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2005.704283806157!2d-70.54977287795657!3d-33.4088170678863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662ce9569ad04e7%3A0xa64894df53a73b2f!2sAv.%20Apoquindo%207935%2C%207571514%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e1!3m2!1ses!2snl!4v1753989873260!5m2!1ses!2snl" 
+                width="100%" height="160" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <!-- Botones -->
+      <div class="footer-botones">
+        <p class="footer-titulo">Ubicación rápida</p>
+        <div class="botones">
+          <a class="btn-mapa" href="https://www.google.com/maps?q=Av.+Apoquindo+7935,+Las+Condes,+Chile" target="_blank">Google Maps</a>
+          <a class="btn-waze" href="https://waze.com/ul?ll=-33.4090082,-70.5496937&navigate=yes" target="_blank">Waze</a>
+        </div>
+      </div>
+    </div>
+    <hr class="linea-inferior" />
+  </div>
+
+<!-- Créditos -->
+<div class="footer-creditos">
+  <p>
+    &copy; 2025 <strong>CC Autos</strong>. Todos los derechos reservados. <br>
+    Diseñado y protegido por 
+    <a href="mailto:picininiluciano@gmail.com">Luciano</a>.
+  </p>
+</div>
+
+</footer>
+
+
+
+<style>
+/* ========== VARIABLES GENERALES ========== */
+:root {
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-red: #B22222; /* rojo oscuro firebrick */
+  --color-gray-light: #CCCCCC;
+  --font-main: 'Barlow', sans-serif;
+}
+
+/* ========== RESET GLOBAL ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== HEADER ========== */
+header {
+  background-color: #111;
+  color: #fff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #333;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo-text .sub {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+nav {
+  display: flex;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #333;
+}
+
+/* ========== MENÚ HAMBURGUESA ========== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background-color: red;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* === CONTENEDOR PRINCIPAL === */
+.container1 {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  animation: fadeIn 1s ease-in-out;
+  
+}
+
+/* ================= FORMULARIO DE CONTACTO ================= */
+#contacto {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 3rem 2rem;
+  background-color: #000; /* fondo negro sólido */
+  border-radius: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+  color: #eee; /* texto principal más claro */
+}
+
+#contacto:hover {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.8);
+}
+
+#contacto h2 {
+  font-size: 2.2rem;
+  color: #ff4b4b;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+#contacto h3 {
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
+  color: #f0f0f0;
+  font-weight: 700;
+}
+
+#contacto p {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  border: 1.5px solid #444;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #fefefe;
+  background-color: #111;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ff4b4b;
+  box-shadow: 0 0 8px #ff4b4baa;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.botones-formulario {
+  text-align: center;
+  margin-top: 1.8rem;
+}
+
+button[type="submit"] {
+  background-color: #b22222;
+  color: white;
+  padding: 0.85rem 3rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(178, 34, 34, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: #9e1a1a;
+  box-shadow: 0 8px 25px rgba(158, 26, 26, 0.8);
+  transform: translateY(-3px);
+  outline: none;
+}
+
+.btn-wsp {
+  display: inline-block;
+  margin-top: 1.2rem;
+  background-color: #25d366;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  box-shadow: 0 3px 10px #25d366aa;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.btn-wsp:hover,
+.btn-wsp:focus {
+  background-color: #1ebd5a;
+  box-shadow: 0 6px 18px #1ebd5aaa;
+  outline: none;
+}
+
+#mensaje-envio {
+  margin-top: 1.8rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ff4b4b;
+  min-height: 1.5rem;
+}
+/* ================= FAQ Section (Estilo Moderno Mejorado) ================= */
+.faq-section {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 4rem auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.faq-section:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #b22222;
+  font-weight: 900;
+  letter-spacing: 1.3px;
+}
+
+/* Preguntas */
+.faq-question {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  user-select: none;
+  margin-bottom: 1rem;
+}
+
+.faq-question:hover,
+.faq-question:focus {
+  background-color: #fcecec;
+  outline: none;
+  box-shadow: 0 6px 18px rgba(178, 34, 34, 0.2);
+}
+
+.faq-question::after {
+  content: '➕';
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: #b22222;
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+  content: '➖';
+  transform: translateY(-50%);
+}
+
+/* Respuestas */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  transition: max-height 0.5s ease, padding 0.4s ease;
+  background-color: #fff7f7;
+  border-left: 5px solid #b22222;
+  border-radius: 0 0 12px 12px;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.faq-answer p,
+.faq-answer ul {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+  color: #555;
+}
+
+.faq-answer ul {
+  list-style-type: disc;
+}
+
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+  #contacto, .faq-section {
+    padding: 2rem 1rem;
+    margin: 1.5rem auto;
+    max-width: 95%;
+  }
+
+  #contacto h2, .faq-section h2 {
+    font-size: 1.8rem;
+  }
+
+  #contacto h3 {
+    font-size: 1.3rem;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+  }
+
+  .faq-answer {
+    font-size: 0.95rem;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+
+  .btn-wsp {
+    width: 100%;
+    padding: 0.75rem 0;
+    text-align: center;
+  }
+}
+
+
+  .footer {
+  font-family: 'Barlow', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 40px 20px 20px;
+}
+
+.footer-top {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.linea-superior,
+.linea-inferior {
+  border: none;
+  border-top: 1px solid #dcdcdc;
+  margin: 20px 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-titulo {
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.footer-redes .redes-iconos {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-redes img {
+  width: 28px;
+  transition: transform 0.3s ease;
+}
+
+.footer-redes img:hover {
+  transform: scale(1.2);
+}
+
+.footer-mapa iframe {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.footer-botones .botones {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-mapa,
+.btn-waze {
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.btn-mapa {
+  background: #e8e8e8;
+  color: #2c3e50;
+}
+
+.btn-waze {
+  background: #d0e8ff;
+  color: #034a8f;
+}
+
+.btn-mapa:hover {
+  background: #ff4c4c;
+  color: #fff;
+  border-color: #ff4c4c;
+}
+
+.btn-waze:hover {
+  background: #0277bd;
+  color: #fff;
+  border-color: #0277bd;
+}
+
+.footer-creditos {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 20px;
+}
+.footer-creditos a {
+  color: #e74c3c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-creditos a:hover {
+  text-decoration: underline;
+  color: #ff6b6b;
+}
+
+
+/* Efecto mágico en enlaces del nav */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #B22222; /* rojo firebrick */
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #ff6b6b;
+  animation: navGlow 1s infinite alternate;
+}
+
+nav a:hover::before,
+nav a:focus::before {
+  width: 100%;
+}
+
+/* Brillo suave animado */
+@keyframes navGlow {
+  0% {
+    text-shadow: 0 0 5px #ff6b6b, 0 0 10px #b22222, 0 0 15px #ff6b6b;
+  }
+  100% {
+    text-shadow: 0 0 10px #ff6b6b, 0 0 20px #b22222, 0 0 30px #ff6b6b;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Box-sizing para todo */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+
+  nav {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    flex-direction: column;
+    padding-top: 80px;
+    color: #fff;
+    z-index: 1000;
+    border-radius: 0 0 0 20px;
+  }
+
+  nav.open {
+    transform: translateX(0);
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+  }
+
+  nav li {
+    border-bottom: 1px solid #444;
+  }
+
+  nav li:last-child {
+    border-bottom: none;
+  }
+
+  nav a {
+    color: #fff;
+    display: block;
+    padding: 1.2rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    user-select: none;
+  }
+
+  nav a:hover,
+  nav a:focus {
+    background-color: rgba(255, 0, 0, 0.3);
+    outline: none;
+  }
+
+  .hamburger {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+     background-color: black;
+    padding: 0.6rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--color-red);
+    z-index: 1100;
+  }
+
+
+  #por-que-vender-con-nosotros h2 {
+    font-size: 2rem;
+  }
+
+  .testimonios h2 {
+    font-size: 1.8rem;
+  }
+
+  .conocenos h3 {
+    font-size: 1.8rem;
+  }
+
+  .formulario-wrapper {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .map-container iframe {
+    height: 250px;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-redes .redes-iconos {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .footer-botones .botones {
+    justify-content: center;
+  }
+
+  .footer-mapa iframe {
+    height: 200px;
+  }
+
+  .footer-titulo {
+    margin-top: 20px;
+  }
+
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    const overlay = document.getElementById('overlay');
+    const body = document.body;
+
+    // Función para abrir/cerrar menú
+    const toggleMenu = () => {
+      nav.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      overlay.classList.toggle('show');
+      body.classList.toggle('no-scroll');
+
+      const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!isExpanded));
+    };
+
+    // Click en el ícono hamburguesa
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Cierra el menú al hacer clic en cualquier enlace del menú
+    const navLinks = document.querySelectorAll('#nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        hamburger.classList.remove('active');
+        overlay.classList.remove('show');
+        body.classList.remove('no-scroll');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Cierra el menú si se hace clic en el fondo oscuro
+    overlay.addEventListener('click', () => {
+      nav.classList.remove('open');
+      hamburger.classList.remove('active');
+      overlay.classList.remove('show');
+      body.classList.remove('no-scroll');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Espera que el DOM cargue
+document.addEventListener('DOMContentLoaded', function () {
+  const questions = document.querySelectorAll('.faq-question');
+
+  questions.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const isActive = btn.classList.contains('active');
+
+      // Cierra todos los demás
+      document.querySelectorAll('.faq-question').forEach((q) => {
+        q.classList.remove('active');
+        q.nextElementSibling.style.maxHeight = null;
+        q.nextElementSibling.style.paddingBottom = '0';
+      });
+
+      // Si no estaba activo, lo abre
+      if (!isActive) {
+        btn.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        answer.style.paddingBottom = '1rem';
+      }
+    });
+  });
+});
+</script>
+
+
+
+</body>
+</html>

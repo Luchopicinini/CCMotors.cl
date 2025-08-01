@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<!-- HTML: Menú de navegación y botón hamburguesa -->
+ <header>
+  <div class="container">
+    <div class="logo-text" style="display: flex; align-items: center; gap: 10px;">
+      <img src="images/Autos/Logo.png" alt="Logo CC Autos" style="height: 70px;" />
+      
+    </div>
+
+    <!-- Menú de navegación -->
+    <nav id="nav" role="navigation" aria-label="Menú principal">
+      <ul id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem" tabindex="0">Inicio</a></li>
+        <li role="none"><a href="stock.html" role="menuitem" tabindex="0">Stock</a></li>
+        <li role="none"><a href="vender.html" role="menuitem" tabindex="0">Vende tu vehiculo</a></li>
+        <li role="none"><a href="financiamiento.html" role="menuitem" tabindex="0">Financiamiento</a></li>
+      </ul>
+    </nav>
+
+    <button id="hamburger" class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span>
+      <span></span>
+      <span></span> 
+    </button>
+  </div>
+</header>
+<div id="overlay"></div>
+
+<section class="hero fade-on-scroll" role="banner" aria-label="Imagen principal de automotora">
+  <h1>Bienvenido a CC Autos.</h1>
+  <button class="btn-primary" aria-label="Ver catálogo de autos destacados" onclick="location.href='stock.html'">Ver stock</button>
+</section>
+
+<section id="por-que-elegir-ccautos" aria-labelledby="titulo-por-que-elegir" class="cc-elegir-section">
+  <h2 id="titulo-por-que-elegir" class="section-title">¿Por qué elegir CC Autos?</h2>
+  <div class="cc-elegir-grid">
+    <div class="cc-elegir-card">
+      <h3>Variedad y Calidad</h3>
+      <p>Vehículos de las mejores marcas, revisados y garantizados para tu tranquilidad.</p>
+    </div>
+    <div class="cc-elegir-card">
+      <h3>Financiamiento a tu Medida</h3>
+      <p>Planes flexibles y transparentes para que manejes el auto que siempre quisiste.</p>
+    </div>
+    <div class="cc-elegir-card">
+      <h3>Atención Personalizada</h3>
+      <p>Un equipo dedicado a ayudarte en cada paso, para una compra segura y sencilla.</p>
+    </div>
+  </div>
+</section>
+
+
+  <main>
+    <section id="nosotros" aria-labelledby="titulo-nosotros">
+      <h2 id="titulo-nosotros" class="section-title">Nosotros</h2>
+      <p>
+        Somos una automotora dedicada a ofrecer los mejores vehículos del mercado con la mejor calidad y atención
+        personalizada. ¡Ven y conoce nuestro catálogo!
+      </p>
+    </section>
+
+    <section id="contacto" aria-labelledby="titulo-contacto"
+      style="max-width: 900px; margin: 4rem auto; padding: 0 2rem; color: var(--color-gray-light); text-align: center;">
+      <h2 id="titulo-contacto" class="section-title">Contacto</h2>
+      <p>Dirección: Apoquindo 7935, Las Condes</p>
+      <p>Teléfono: +56 9 8827 6054</p>
+      <p>Email: Automotriz.camposav@gmail.com</p>
+    </section>
+  </main>
+
+
+<footer class="footer">
+  <div class="footer-top">
+    <hr class="linea-superior" />
+    <div class="footer-content">
+      <!-- Redes sociales -->
+<div class="footer-redes">
+  <p class="footer-titulo">Síguenos</p>
+  <div class="redes-iconos">
+    <a href="https://www.instagram.com/ccautos.cl" target="_blank" aria-label="Instagram">
+      <img src="images/icons/instagram.svg" alt="Instagram" />
+    </a>
+    <a href="https://www.facebook.com/ccautos.cl" target="_blank" aria-label="Facebook">
+      <img src="images/icons/facebook.svg" alt="Facebook" />
+    </a>
+    <a href="https://wa.me/56988276054" target="_blank" aria-label="WhatsApp">
+      <img src="images/icons/whatsapp.svg" alt="WhatsApp" />
+    </a>
+  </div>
+</div>
+      <!-- Mapa -->
+      <div class="footer-mapa">
+        <p class="footer-titulo">¿Cómo llegar?</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2005.704283806157!2d-70.54977287795657!3d-33.4088170678863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662ce9569ad04e7%3A0xa64894df53a73b2f!2sAv.%20Apoquindo%207935%2C%207571514%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e1!3m2!1ses!2snl!4v1753989873260!5m2!1ses!2snl" 
+                width="100%" height="160" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <!-- Botones -->
+      <div class="footer-botones">
+        <p class="footer-titulo">Ubicación rápida</p>
+        <div class="botones">
+          <a class="btn-mapa" href="https://www.google.com/maps?q=Av.+Apoquindo+7935,+Las+Condes,+Chile" target="_blank">Google Maps</a>
+          <a class="btn-waze" href="https://waze.com/ul?ll=-33.4090082,-70.5496937&navigate=yes" target="_blank">Waze</a>
+        </div>
+      </div>
+    </div>
+    <hr class="linea-inferior" />
+  </div>
+
+<!-- Créditos -->
+<div class="footer-creditos">
+  <p>
+    &copy; 2025 <strong>CC Autos</strong>. Todos los derechos reservados. <br>
+    Diseñado y protegido por 
+    <a href="mailto:picininiluciano@gmail.com">Luciano</a>.
+  </p>
+</div>
+
+</footer>
+
+
+
+<a class="chatbot" href="https://wa.me/56988276054?text=Hola%2C%20me%20interesa%20obtener%20m%C3%A1s%20informaci%C3%B3n" target="_blank" aria-label="Habla por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#25D366">
+    <path d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.883.742 5.636 2.148 8.08L.05 31.95l7.646-2.048a15.938 15.938 0 0 0 8.3 2.292c8.836 0 16-7.164 16-16S24.836.396 16 .396zm0 29.167a13.09 13.09 0 0 1-6.676-1.79l-.478-.285-4.544 1.215 1.215-4.426-.308-.455a13.08 13.08 0 0 1-2.014-7.022c0-7.238 5.885-13.122 13.122-13.122 7.238 0 13.123 5.884 13.123 13.122 0 7.237-5.885 13.121-13.123 13.121zm7.423-9.57c-.406-.204-2.4-1.184-2.772-1.318-.372-.136-.643-.204-.914.204-.27.407-1.05 1.317-1.288 1.59-.237.27-.475.305-.88.102-.406-.204-1.715-.632-3.266-2.016-1.207-1.078-2.02-2.408-2.258-2.814-.237-.407-.025-.627.18-.83.184-.182.406-.475.61-.712.204-.237.27-.407.406-.678.136-.27.068-.508-.034-.712-.102-.204-.914-2.21-1.25-3.017-.33-.792-.666-.682-.914-.694l-.78-.014c-.27 0-.712.102-1.085.475-.372.373-1.421 1.387-1.421 3.38 0 1.994 1.454 3.917 1.656 4.187.203.27 2.86 4.365 6.937 6.114.97.418 1.728.667 2.318.854.974.31 1.86.267 2.56.162.78-.116 2.4-.978 2.738-1.922.338-.95.338-1.767.237-1.922-.102-.153-.37-.27-.777-.475z"/>
+  </svg>
+</a>
+
+
+
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    const overlay = document.getElementById('overlay');
+    const body = document.body;
+
+    // Función para abrir/cerrar menú
+    const toggleMenu = () => {
+      nav.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      overlay.classList.toggle('show');
+      body.classList.toggle('no-scroll');
+
+      const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!isExpanded));
+    };
+
+    // Click en el ícono hamburguesa
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Cierra el menú al hacer clic en cualquier enlace del menú
+    const navLinks = document.querySelectorAll('#nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        hamburger.classList.remove('active');
+        overlay.classList.remove('show');
+        body.classList.remove('no-scroll');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Cierra el menú si se hace clic en el fondo oscuro
+    overlay.addEventListener('click', () => {
+      nav.classList.remove('open');
+      hamburger.classList.remove('active');
+      overlay.classList.remove('show');
+      body.classList.remove('no-scroll');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+<script>
+  // Efecto de desvanecimiento y movimiento al hacer scroll
+  window.addEventListener('scroll', () => {
+    const fadeElements = document.querySelectorAll('.fade-on-scroll'); // Elementos con efecto
+    fadeElements.forEach(el => {
+      const scrollY = window.scrollY;              // Cuánto se ha desplazado la página
+      const elementTop = el.offsetTop;             // Distancia del elemento al top
+      const elementHeight = el.offsetHeight;       // Altura del elemento
+
+      if (scrollY < elementTop + elementHeight) {
+        const progress = scrollY / (elementHeight * 1.2);           // Progreso de aparición
+        el.style.opacity = 1 - progress;                            // Reduce opacidad
+        el.style.transform = `translateY(${progress * 40}px)`;     // Desplaza hacia abajo
+      } else {
+        el.style.opacity = 0;               // Oculta si ya se ha desplazado demasiado
+      }
+    });
+  });
+</script>
+
+
+
+<style>
+  /* ESTILOS GENERALES */
+  :root {
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-red: #B22222;
+    /* rojo oscuro firebrick */
+    --color-gray-light: #CCCCCC;
+    --font-main: 'Barlow', sans-serif;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-main);
+     background-color: #111111;
+    color: var(--color-white);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  header {
+    background-color: #111;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #333;
+    z-index: 1000;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .logo-text .sub {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  nav {
+    display: flex;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease;
+  }
+
+  nav a:hover {
+    background-color: #333;
+  }
+
+  /* HAMBURGER MENU */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background-color: red;
+    /* menú hamburguesa rojo */
+    border: none;
+    padding: 0.5rem;
+    border-radius: 6px;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .hero {
+    background-color: #ffffff;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+
+.hero h1 {
+  font-size: 3rem;
+  color: #000000a6;
+  margin-bottom: 1.5rem;
+  letter-spacing: 4px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.fade-on-scroll {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+  .btn-primary:hover {
+    background-color: #8b1a1a;
+  }
+
+  .btn-primary {
+    padding: 0.8rem 2.5rem;
+    background: rgb(0, 0, 0);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    user-select: none;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background: #fff8f8;
+    color: #000000;
+    outline: none;
+    box-shadow: 0 0 25px #ccc6c6;
+  }
+
+  
+  
+.section-title {
+  margin: 4rem 0 2rem;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  background: linear-gradient(90deg, #d30c0cde 0%, #a10909de 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Para Firefox */
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(255, 254, 254, 0.25);
+  animation: gradientShift 4s ease infinite;
+  user-select: none;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Sección: ¿Por qué elegirnos? */
+.cc-elegir-section {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+  color: var(--color-white);
+}
+
+
+
+.cc-elegir-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.cc-elegir-card {
+  background-color: #151515;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  max-width: 300px;
+  flex: 1 1 260px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cc-elegir-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.cc-elegir-card h3 {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.cc-elegir-card p {
+  font-size: 1.05rem;
+  color: #bbbbbb;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+  /* Sección Nosotros */
+  #nosotros {
+    max-width: 900px;
+    margin: 4rem auto 4rem auto;
+    padding: 0 2rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--color-gray-light);
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  /* Por qué elegirnos */
+  .why-choose {
+    max-width: 1100px;
+    margin: 0 auto 6rem;
+    background: #121212;
+    padding: 4rem 2rem 5rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 30px rgba(178, 34, 34, 0.25);
+    text-align: center;
+    color: var(--color-white);
+  }
+
+  .why-choose h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 4px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--color-red);
+    text-shadow: 0 0 10px rgba(178, 34, 34, 0.8);
+  }
+
+  .why-choose p.subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-gray-light);
+    margin-bottom: 3rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .feature-item {
+    background: #222;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(178, 34, 34, 0.15);
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+
+  .feature-item:hover,
+  .feature-item:focus {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(178, 34, 34, 0.6);
+    outline: none;
+  }
+
+  .feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-red);
+    user-select: none;
+  }
+
+  .feature-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--color-white);
+  }
+
+  .feature-desc {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-gray-light);
+    line-height: 1.5;
+  }
+
+
+      .footer {
+  font-family: 'Barlow', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 40px 20px 20px;
+}
+
+.footer-top {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.linea-superior,
+.linea-inferior {
+  border: none;
+  border-top: 1px solid #dcdcdc;
+  margin: 20px 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-titulo {
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.footer-redes .redes-iconos {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-redes img {
+  width: 28px;
+  transition: transform 0.3s ease;
+}
+
+.footer-redes img:hover {
+  transform: scale(1.2);
+}
+
+.footer-mapa iframe {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.footer-botones .botones {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-mapa,
+.btn-waze {
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.btn-mapa {
+  background: #e8e8e8;
+  color: #2c3e50;
+}
+
+.btn-waze {
+  background: #d0e8ff;
+  color: #034a8f;
+}
+
+.btn-mapa:hover {
+  background: #ff4c4c;
+  color: #fff;
+  border-color: #ff4c4c;
+}
+
+.btn-waze:hover {
+  background: #0277bd;
+  color: #fff;
+  border-color: #0277bd;
+}
+
+.footer-creditos {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 20px;
+}
+.footer-creditos a {
+  color: #e74c3c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-creditos a:hover {
+  text-decoration: underline;
+  color: #ff6b6b;
+}
+  /* 1. Typewriter efecto para .hero h1 */
+  .hero h1 {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid var(--color-red);
+    animation: typing 4s steps(30, end) infinite, blinkCaret 0.75s step-end infinite;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  @keyframes typing {
+    0% {
+      width: 0
+    }
+
+    50% {
+      width: 100%
+    }
+
+    100% {
+      width: 0
+    }
+  }
+
+  @keyframes blinkCaret {
+    0%,
+    100% {
+      border-color: transparent
+    }
+
+    50% {
+      border-color: var(--color-red)
+    }
+  }
+
+  /* 2. Botones con efecto glow al hover y foco */
+  .btn-primary,
+  .primary {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    user-select: none;
+  }
+
+  .btn-primary:hover,
+  .primary:hover,
+  .btn-primary:focus,
+  .primary:focus {
+    box-shadow: 0 0 12px var(--color-red), 0 0 20px #ff4949;
+    transform: scale(1.05);
+    outline: none;
+  }
+
+  /* 3. Títulos de sección con línea deslizante */
+  .section-title {
+    position: relative;
+    overflow: hidden;
+  }
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-red), #d3d0d0);
+  transform: translateX(-100%);
+  animation: slideIn 4s forwards; /* más lento que 1.5s */
+}
+
+  @keyframes slideIn {
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* 4. Botón chatbot WhatsApp con pulso animado */
+  .chatbot {
+    background-color: #25D366 !important;
+    box-shadow: 0 0 12px #25D366 !important;
+    animation: pulse 2.5s infinite !important;
+  }
+
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 12px #25D366;
+      transform: scale(1);
+    }
+
+    50% {
+      box-shadow: 0 0 20px #25D366;
+      transform: scale(1.1);
+    }
+
+    100% {
+      box-shadow: 0 0 12px #25D366;
+      transform: scale(1);
+    }
+  }
+
+  /* 5. Hover animado para auto-cards (ya tienes transform y sombra) */
+  /* Complementamos con una sombra de brillo suave */
+  .auto-card:hover {
+    box-shadow:
+      0 12px 40px rgba(178, 34, 34, 0.6),
+      0 0 20px 5px rgba(178, 34, 34, 0.3);
+  }
+
+  /* Opcional: Añadir cursor pointer en .auto-card para reforzar interactividad */
+  .auto-card {
+    cursor: pointer;
+  }
+
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  border-radius: 50%;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chatbot:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.chatbot svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+/* Efecto mágico en enlaces del nav */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #B22222; /* rojo firebrick */
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #ff6b6b;
+  animation: navGlow 1s infinite alternate;
+}
+
+nav a:hover::before,
+nav a:focus::before {
+  width: 100%;
+}
+
+/* Brillo suave animado */
+@keyframes navGlow {
+  0% {
+    text-shadow: 0 0 5px #ff6b6b, 0 0 10px #b22222, 0 0 15px #ff6b6b;
+  }
+  100% {
+    text-shadow: 0 0 10px #ff6b6b, 0 0 20px #b22222, 0 0 30px #ff6b6b;
+  }
+}
+</style>  
+  <style>
+  @media (max-width: 768px) {
+  /* Box-sizing para todo */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  nav {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    flex-direction: column;
+    padding-top: 80px;
+    color: #fff;
+    z-index: 1000;
+    border-radius: 0 0 0 20px;
+  }
+  nav.open {
+    transform: translateX(0);
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+  }
+  nav li {
+    border-bottom: 1px solid #444;
+  }
+  nav li:last-child {
+    border-bottom: none;
+  }
+  nav a {
+    color: #fff;
+    display: block;
+    padding: 1.2rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    user-select: none;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: rgba(255, 0, 0, 0.3);
+    outline: none;
+  }
+  .hamburger {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+     background-color: black;
+    padding: 0.6rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--color-red);
+    z-index: 1100;
+  }
+ 
+  
+  .hero h1 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+   .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-redes .redes-iconos {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .footer-botones .botones {
+    justify-content: center;
+  }
+
+  .footer-mapa iframe {
+    height: 200px;
+  }
+
+  .footer-titulo {
+    margin-top: 20px;
+  }
+
+  /* Ajustes generales */
+  .section-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin: 2rem 0 1.5rem;
+    text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Sección: ¿Por qué elegirnos? */
+  .cc-elegir-section {
+    padding: 0 1rem;
+    margin: 2rem 0;
+  }
+
+  .cc-elegir-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .cc-elegir-card {
+    max-width: 100%;
+    padding: 1.5rem 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .cc-elegir-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .cc-elegir-card p {
+    font-size: 1rem;
+  }
+
+  /* Sección nosotros */
+  #nosotros {
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin: 3rem auto;
+  }
+
+  /* Por qué elegirnos */
+  .why-choose {
+    padding: 2.5rem 1rem 3rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 4px 20px rgba(178, 34, 34, 0.2);
+  }
+
+  .why-choose h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .why-choose p.subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Características */
+  .features-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .feature-item {
+    padding: 1.5rem 1.2rem;
+    box-shadow: 0 4px 10px rgba(178, 34, 34, 0.2);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .feature-title {
+    font-size: 1.3rem;
+  }
+
+  .feature-desc {
+    font-size: 0.95rem;
+  }
+
+
+  .chatbot {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px;
+  }
+
+  .chatbot svg {
+    width: 24px;
+    height: 24px;
+  }
+
+}
+
+
+    /* Cursor typing blink */
+    @keyframes blink {
+
+      0%,
+      50%,
+      100% {
+        opacity: 1;
+      }
+
+      25%,
+      75% {
+        opacity: 0;
+      }
+    }
+
+    /* Ripple effect */
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    .btn-primary,
+    .primary {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+      border-radius: 4px;
+    }
+
+    .btn-primary:focus,
+    .primary:focus {
+      outline: none;
+      box-shadow: 0 0 8px #b22222dd;
+    }
+
+    .btn-primary span.ripple,
+    .primary span.ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      background: rgba(255, 255, 255, 0.4);
+      pointer-events: none;
+    }
+
+    /* Logo glitch */
+    .logo-text .main.glitch {
+      position: relative;
+      color: #b22222;
+      text-shadow:
+        2px 0 red,
+        -2px 0 cyan;
+      clip-path: polygon(0 2%, 100% 2%, 100% 8%, 0 8%);
+      animation: glitch-anim 0.15s ease-in-out;
+    }
+
+    @keyframes glitch-anim {
+      0% {
+        clip-path: polygon(0 2%, 100% 2%, 100% 8%, 0 8%);
+        transform: translate(0);
+      }
+
+      50% {
+        clip-path: polygon(0 10%, 100% 10%, 100% 14%, 0 14%);
+        transform: translate(-2px, -1px);
+      }
+
+      100% {
+        clip-path: polygon(0 2%, 100% 2%, 100% 8%, 0 8%);
+        transform: translate(0);
+      }
+    }
+  </style>
+</body>
+</html>
