@@ -1076,17 +1076,15 @@ nav a:focus::before {
           "images/SUBARU/wrx6.png"
 
         ],
-        descripcion: "Motor 2.4 cvt con traccion AWD",
+        descripcion: "Motor 2.4L turbo de 271 HP, tracción AWD y caja CVT. Suspensión deportiva, llantas aro 18, frenos ventilados. Interior con asientos deportivos, climatizador dual, pantalla táctil de 11.6, Apple CarPlay/Android Auto. Sistema EyeSight con frenado autónomo y control crucero adaptativo.",
         precio: "$36.790.000 CLP",
-        kilometros: "23.000 km",
-        año: "2024",
+
         caja: "Automática",
         combustible: "Bencina",
         extras: [
-          "Frenos ABS",
+          "Suspensión deportiva",
           "Airbags laterales",
           "Cámara de reversa",
-          "Bluetooth",
           "Apple Carplay y Android Auto"
 
         ] // ----------------------------------
@@ -1107,12 +1105,10 @@ nav a:focus::before {
           "images/SUBARUBLANCO/10.jpg",
           
         ],
-        descripcion: "Cuenta con un motor de 2.4 litros, tracción integral AWD y suspensión adaptativa electrónica, lo que garantiza una experiencia de manejo estable y confortable en todo tipo de terreno. Incorpora el sistema EyeSight, una avanzada tecnología de asistencia a la conducción que mejora la seguridad en carretera. Además, dispone de una pantalla táctil compatible con Apple CarPlay y Android Auto, ofreciendo conectividad total y acceso intuitivo a tus aplicaciones favoritas.",
+        descripcion: "Motor 2.4L turbo de 271 HP, tracción AWD y caja CVT. Suspensión deportiva, llantas aro 18, frenos ventilados. Interior con asientos deportivos, climatizador dual, pantalla táctil de 11.6, Apple CarPlay/Android Auto. Sistema EyeSight con frenado autónomo y control crucero adaptativo.",
         precio: "$36.790.000 CLP",
-        kilometros: "15.000 km",
-        año: "2024",
         caja: "Automática",
-        combustible: "Gasolina",
+        combustible: "Bencina",
         extras: [
           "Sensor de estacionamiento",
           "Cámara de retroceso",
@@ -1139,8 +1135,6 @@ nav a:focus::before {
         ],
         descripcion: "Equipada con un eficiente motor 1.5 L BlueHDi diésel, esta versión ofrece un equilibrio ideal entre rendimiento y bajo consumo. Incluye climatizador bi-zona para mayor confort, asiento del conductor con memoria y un elegante techo panorámico que aporta luminosidad al interior. La pantalla táctil incorpora navegación GPS y es compatible con Apple CarPlay y Android Auto, permitiendo una conectividad fluida. El sistema de audio Focal brinda una experiencia sonora premium. En materia de seguridad, destaca por su frenado autónomo de emergencia y control de estabilidad, garantizando una conducción más segura en todo momento.",
         precio: "$26.980.000 CLP",
-        kilometros: "37.000 km",
-        año: "2024",
         caja: "Automática",
         combustible: "Diesel",
         extras: [
@@ -1168,8 +1162,6 @@ nav a:focus::before {
         ],
         descripcion: "Este modelo cuenta con un motor 2.0 y tracción 4x4, ideal para enfrentar distintos tipos de terreno con confianza. Viene equipado con neumáticos nuevos y láminas de seguridad para mayor protección. Incluye sunroof, que aporta una experiencia de conducción más agradable y luminosa. Además, ofrece conectividad con Apple CarPlay y Android Auto, permitiendo acceder fácilmente a tus aplicaciones y funciones desde la pantalla del vehículo.",
         precio: "$39.990.000 CLP",
-        kilometros: "47.500 km",
-        año: "2023",
         caja: "Automática",
         combustible: "Bencina",
         extras: [
@@ -1201,12 +1193,12 @@ nav a:focus::before {
         ],
         descripcion: "El vehículo cuenta con transmisión automática, ha tenido un único dueño, y dispone de puerto USB y entrada auxiliar para mayor comodidad y conectividad.",
         precio: "$11.990.000 CLP",
-        kilometros: "130.000 km",
-        año: "2016",
         caja: "Automática",
         combustible: "Bencina",
         extras: [
           "Unico dueño",
+          "Camara de retroceso",
+          "Asientos de cuero"
 
         ] 
       },
@@ -1231,8 +1223,8 @@ nav a:focus::before {
         caja: "Automática",
         combustible: "Bencina",
         extras: [
-          "Sensores delanteros",
-          " Bluetooth",
+          "Motor 1.6",
+          " Pantalla tactil",
           "Acceso confort con botón encendido"
         ] 
       },
@@ -1244,8 +1236,6 @@ nav a:focus::before {
         ],
         descripcion: "",
         precio: "$18.690.000 CLP",
-        kilometros: "58.000 km",
-        año: "2022",
         caja: "Automática",
         combustible: "Bencina",
         extras: [
@@ -1268,8 +1258,7 @@ nav a:focus::before {
         ],
         descripcion: "Motor 2.5 litros potente y eficiente. Tracción 4x4 para mejor estabilidad en todo terreno. Asientos de cuero que brindan confort y estilo. Climatizador automático para mantener la temperatura ideal. Techo solar panorámico que aporta luz natural. Cámara de retroceso para facilitar el estacionamiento.",
         precio: "$9.590.000. CLP",
-        kilometros: "135.000 km",
-        año: "2013",
+
         caja: "Automática",
         combustible: "Bencina",
         extras: [
@@ -1314,8 +1303,6 @@ nav a:focus::before {
 
       // Badges
       const badgesHtml = [
-        auto.año ? crearBadge(auto.año) : '',
-        auto.kilometros ? crearBadge(auto.kilometros) : '',
         auto.caja ? crearBadge(auto.caja) : '',
         auto.combustible ? crearBadge(auto.combustible) : '',
       ].join(' ');
