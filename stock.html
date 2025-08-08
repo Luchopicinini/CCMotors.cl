@@ -594,24 +594,43 @@ nav a:hover {
 }
 
 .etiqueta-nuevo,
+.etiqueta-nuevo1,
 .etiqueta-nuevo2 {
   position: absolute;
   top: 12px;
   left: 12px;
-  padding: 6px 12px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 10px;
   z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
 .etiqueta-nuevo {
-  background: #28a745;
+  background-color: #007a1f; /* verde oscuro más vibrante */
+}
+
+.etiqueta-nuevo1 {
+  background-color: #640404; /* rojo oscuro más intenso */
 }
 
 .etiqueta-nuevo2 {
-  background: #007bff;
+  background-color: #222222; /* negro suave */
+}
+
+/* Opcional: efecto hover para dar feedback */
+.etiqueta-nuevo:hover,
+.etiqueta-nuevo1:hover,
+.etiqueta-nuevo2:hover {
+  filter: brightness(1.1);
+  cursor: default;
 }
 
 .view-more {
